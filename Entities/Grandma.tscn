@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://du64xn58fpcg7"]
+[gd_scene load_steps=5 format=3 uid="uid://du64xn58fpcg7"]
 
 [ext_resource type="Script" path="res://Entities/Grandma.gd" id="1_0xr2c"]
 [ext_resource type="Texture2D" uid="uid://bte2271fbsyxk" path="res://Assets/Temporary/Green Rectangle1.png" id="1_wc1vr"]
+[ext_resource type="Script" path="res://Entities/TeleportIndicator.gd" id="3_q5kbw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4vuly"]
 size = Vector2(32, 64)
@@ -14,4 +15,10 @@ scale = Vector2(1, 2)
 texture = ExtResource("1_wc1vr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4vuly")
+
+[node name="TeleportIndicator" type="Area2D" parent="."]
+script = ExtResource("3_q5kbw")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TeleportIndicator"]
 shape = SubResource("RectangleShape2D_4vuly")
