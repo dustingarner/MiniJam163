@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://baqjt2skbdmk"]
+
+[ext_resource type="Texture2D" uid="uid://duq2cw67vksll" path="res://Assets/Temporary/icon.svg" id="1_rgvfm"]
+[ext_resource type="Script" path="res://Entities/Teleporter/TeleporterControl.gd" id="1_sbg63"]
+[ext_resource type="Script" path="res://Entities/Teleporter/Teleporter.gd" id="2_g8tos"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wpovl"]
+size = Vector2(386, 383)
+
+[node name="TeleporterControl" type="Node2D"]
+script = ExtResource("1_sbg63")
+
+[node name="Teleporter1" type="Area2D" parent="."]
+script = ExtResource("2_g8tos")
+
+[node name="Sprite2D" type="Sprite2D" parent="Teleporter1"]
+scale = Vector2(3, 3)
+texture = ExtResource("1_rgvfm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleporter1"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_wpovl")
+
+[node name="Marker2D" type="Marker2D" parent="Teleporter1"]
+position = Vector2(-146, 0)
+
+[node name="Teleporter2" type="Area2D" parent="."]
+position = Vector2(967, -3)
+script = ExtResource("2_g8tos")
+
+[node name="Sprite2D" type="Sprite2D" parent="Teleporter2"]
+scale = Vector2(3, 3)
+texture = ExtResource("1_rgvfm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleporter2"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_wpovl")
+
+[node name="Marker2D" type="Marker2D" parent="Teleporter2"]
+position = Vector2(151, 3)

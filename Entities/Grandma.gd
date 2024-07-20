@@ -5,7 +5,7 @@ enum States {IDLE = 0, WALKING, JUMPING, FALLING}
 
 
 @export var GRAVITY:= 100.0
-@export var MOVE_SPEED:= 200.0
+@export var MOVE_SPEED:= 400.0
 @export var JUMP_SPEED:= 200.0
 @export var MAX_JUMP_HEIGHT:= 200.0
 
@@ -17,6 +17,7 @@ var current_state: int = 0
 func _ready():
 	collision_layer = Collision.GRANDMA
 	collision_mask = Collision.FLOOR
+	$TeleportIndicator.init(self)
 
 func change_state(new_state: int):
 	prev_state = current_state
@@ -56,6 +57,9 @@ func _input(event):
 func _physics_process(delta):
 	apply_horizontal(delta)
 	apply_gravity(delta)
+	if (current_state == States.IDLE or current_state == States.WALKING) and \
+			not is_on_floor():
+		change_state(States.FALLING)
 	if current_state == States.JUMPING and velocity.y >= 0:
 		change_state(States.FALLING)
 	if current_state == States.FALLING and is_on_floor():
