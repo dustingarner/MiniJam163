@@ -1,24 +1,21 @@
-[gd_scene load_steps=16 format=3 uid="uid://bvinkmovoh8wi"]
+[gd_scene load_steps=15 format=3 uid="uid://bvinkmovoh8wi"]
 
 [ext_resource type="Script" path="res://Scenes/House.gd" id="1_10868"]
-[ext_resource type="Texture2D" uid="uid://cog1cs2rs2uyg" path="res://Assets/Exported Art Assets/House.png" id="1_etrm6"]
+[ext_resource type="Texture2D" uid="uid://bwhegxpio323w" path="res://Assets/Exported Art Assets/House.png" id="1_etrm6"]
 [ext_resource type="Script" path="res://Scenes/Floor.gd" id="1_wccg7"]
-[ext_resource type="Texture2D" uid="uid://cwsfucvm1yxy6" path="res://Assets/Exported Art Assets/Blue Sky.jpg" id="2_0y24p"]
+[ext_resource type="Texture2D" uid="uid://cay55d530tywr" path="res://Assets/Exported Art Assets/Blue Sky.jpg" id="2_0y24p"]
 [ext_resource type="PackedScene" uid="uid://du64xn58fpcg7" path="res://Entities/Grandma.tscn" id="2_p0sr7"]
 [ext_resource type="PackedScene" uid="uid://ps4cxwre5kc8" path="res://Entities/Child.tscn" id="3_3rqlv"]
 [ext_resource type="Script" path="res://Entities/Teleporter/TeleporterControl.gd" id="3_a7qii"]
 [ext_resource type="Script" path="res://Scenes/TurnAround.gd" id="4_wh21w"]
 [ext_resource type="Script" path="res://Entities/Teleporter/Teleporter.gd" id="4_y2amr"]
-[ext_resource type="Texture2D" uid="uid://e5jop2p2qivi" path="res://Assets/Exported Art Assets/Doors & Collums.png" id="8_oys0j"]
+[ext_resource type="Texture2D" uid="uid://v6eebddobesk" path="res://Assets/Exported Art Assets/Doors & Collums.png" id="8_oys0j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tj4fa"]
 size = Vector2(1921, 19)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_02c4x"]
-size = Vector2(1577.5, 19)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_18680"]
-size = Vector2(1921, 19)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_27bqp"]
+size = Vector2(179.563, 19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s33pp"]
 size = Vector2(20, 186)
@@ -66,37 +63,26 @@ position = Vector2(960.5, 0)
 shape = SubResource("RectangleShape2D_tj4fa")
 
 [node name="Wall1" type="StaticBody2D" parent="."]
-position = Vector2(265, 638)
+position = Vector2(171, 636)
 rotation = 1.5708
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_wccg7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall1"]
-position = Vector2(4.80825e-07, 1.23978e-05)
-shape = SubResource("RectangleShape2D_tj4fa")
+position = Vector2(-271, -124.999)
+shape = SubResource("RectangleShape2D_27bqp")
 
 [node name="Wall2" type="StaticBody2D" parent="."]
-position = Vector2(1532, 670)
+position = Vector2(1361, 1195)
 rotation = 1.5708
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_wccg7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
-position = Vector2(-712.75, 2)
-shape = SubResource("RectangleShape2D_02c4x")
-
-[node name="Wall3" type="StaticBody2D" parent="."]
-position = Vector2(1547, 669)
-rotation = 1.5708
-collision_layer = 4
-collision_mask = 3
-script = ExtResource("1_wccg7")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3"]
-position = Vector2(1038, 46)
-shape = SubResource("RectangleShape2D_18680")
+position = Vector2(-271, -124.999)
+shape = SubResource("RectangleShape2D_27bqp")
 
 [node name="TurnAround" type="Area2D" parent="."]
 position = Vector2(300, 387)
@@ -107,7 +93,7 @@ position = Vector2(0, -20)
 shape = SubResource("RectangleShape2D_s33pp")
 
 [node name="TurnAround2" type="Area2D" parent="."]
-position = Vector2(1482, 939)
+position = Vector2(1482, 940)
 script = ExtResource("4_wh21w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TurnAround2"]
@@ -115,8 +101,9 @@ position = Vector2(0, -20)
 shape = SubResource("RectangleShape2D_s33pp")
 
 [node name="Grandma" parent="." instance=ExtResource("2_p0sr7")]
-position = Vector2(719, 731)
-GRAVITY = 400.0
+position = Vector2(391, 731)
+scale = Vector2(-2.1, 2.1)
+GRAVITY = 200.0
 
 [node name="Child" parent="." instance=ExtResource("3_3rqlv")]
 position = Vector2(1003, 731)
@@ -137,22 +124,22 @@ position = Vector2(3913.33, 653.333)
 script = ExtResource("4_y2amr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TeleporterControl2_3/Teleporter1"]
-position = Vector2(166.667, -120)
+position = Vector2(193.337, -120)
 shape = SubResource("RectangleShape2D_wpovl")
 
 [node name="Marker2D" type="Marker2D" parent="TeleporterControl2_3/Teleporter1"]
-position = Vector2(46.6668, 190)
+position = Vector2(100.003, 190)
 
 [node name="Teleporter2" type="Area2D" parent="TeleporterControl2_3"]
 position = Vector2(-156.667, 1573.33)
 script = ExtResource("4_y2amr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TeleporterControl2_3/Teleporter2"]
-position = Vector2(106.667, -73.3333)
+position = Vector2(66.667, -73.33)
 shape = SubResource("RectangleShape2D_wpovl")
 
 [node name="Marker2D" type="Marker2D" parent="TeleporterControl2_3/Teleporter2"]
-position = Vector2(226.667, 190)
+position = Vector2(166.667, 193.337)
 
 [node name="TeleporterControl1_2" type="Node2D" parent="."]
 position = Vector2(292, 489)
@@ -164,22 +151,22 @@ position = Vector2(3863.33, 606.667)
 script = ExtResource("4_y2amr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TeleporterControl1_2/Teleporter1"]
-position = Vector2(166.667, -120)
+position = Vector2(243.337, -120)
 shape = SubResource("RectangleShape2D_wpovl")
 
 [node name="Marker2D" type="Marker2D" parent="TeleporterControl1_2/Teleporter1"]
-position = Vector2(46.6668, 190)
+position = Vector2(150.003, 200)
 
 [node name="Teleporter2" type="Area2D" parent="TeleporterControl1_2"]
 position = Vector2(-120, 1550)
 script = ExtResource("4_y2amr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TeleporterControl1_2/Teleporter2"]
-position = Vector2(106.667, -73.3333)
+position = Vector2(43.3334, -73.3333)
 shape = SubResource("RectangleShape2D_wpovl")
 
 [node name="Marker2D" type="Marker2D" parent="TeleporterControl1_2/Teleporter2"]
-position = Vector2(226.667, 190)
+position = Vector2(130, 196.667)
 
 [node name="HouseForeground" type="Sprite2D" parent="."]
 position = Vector2(859, 540)

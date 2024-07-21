@@ -4,13 +4,20 @@ class_name  Grandma
 enum States {IDLE = 0, WALKING, JUMPING, FALLING}
 
 
-@export var GRAVITY:= 200.0
+@export var GRAVITY:= 10.0
 @export var MOVE_SPEED:= 200.0
 @export var JUMP_SPEED:= 100.0
 @export var MAX_JUMP_HEIGHT:= 200.0
 
-@onready var sprite:= $Sprite2D
+@onready var animation:= $AnimatedSprite2D
 @onready var give_radius:= $GiveRadius
+
+const ANIM_LOCATIONS:= {
+	States.IDLE: -30,
+	States.JUMPING: -31,
+	States.FALLING: -31,
+	States.WALKING: -28
+}
 
 var start_jump_height: float
 var prev_state: int = 0
@@ -24,10 +31,18 @@ func _ready():
 	$TeleportIndicator.init(self)
 	give_radius.area_entered.connect(func(area): area.toggle_reception(true))
 	give_radius.area_exited.connect(func(area): area.toggle_reception(false))
+	change_state(States.IDLE)
 
 func change_state(new_state: int):
 	prev_state = current_state
 	current_state = new_state
+	animation.position.y = ANIM_LOCATIONS[new_state]
+	if new_state == States.IDLE:
+		animation.play("idle")
+	if new_state == States.WALKING:
+		animation.play("walking")
+	if new_state == States.JUMPING:
+		animation.play("jumping")
 
 func teleport(location: Vector2):
 	var jump_offset: float
@@ -43,8 +58,6 @@ func apply_horizontal(delta: float):
 	velocity.x = MOVE_SPEED
 	var axis:= Input.get_axis("left", "right")
 	velocity.x *= axis
-	if axis != 0:
-		sprite.scale.x = axis
 
 func apply_gravity(delta: float):
 	if is_on_floor():
@@ -59,12 +72,15 @@ func _input(event):
 		velocity.y = -JUMP_SPEED
 		change_state(States.JUMPING)
 	if event.is_action_pressed("left"):
+		animation.scale.x = abs(animation.scale.x) * -1
 		if current_state == States.IDLE:
 			change_state(States.WALKING)
 	if event.is_action_pressed("right"):
+		animation.scale.x = abs(animation.scale.x)
 		if current_state == States.IDLE:
 			change_state(States.WALKING)
-	if event.is_action_released("left") or event.is_action_released("right"):
+	if (event.is_action_released("left") or event.is_action_released("right")) and \
+			current_state == States.WALKING:
 		if Input.get_axis("left", "right") == 0:
 			change_state(States.IDLE)
 
