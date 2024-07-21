@@ -6,7 +6,9 @@ enum States {IDLE = 0, WALKING, RUNNING, FOOD_COMA}
 @export var WALK_SPEED:= 500
 @export var RUN_SPEED:= 800
 
-@onready var sprite:= $Sprite2D
+@export var child_id:= 0
+
+@onready var animation:= $AnimatedSprite2D
 @onready var teleporter_indicator:= $TeleportIndicator
 @onready var receive_radius:= $ReceiveRadius
 @onready var turn_around_indicator:= $TurnAroundIndicator
@@ -23,6 +25,7 @@ var move_adjustment: float
 var number_cookies:= 0
 
 func _ready():
+	assert(child_id != 0 and child_id < 4, "child_id must be set to 1, 2, or 3.")
 	collision_layer = Collision.CHILDREN
 	collision_mask = Collision.FLOOR
 	receive_radius.collision_layer = Collision.RECEIVE_RADIUS
@@ -34,12 +37,20 @@ func _ready():
 	receive_radius.mouse_entered.connect(func(): toggle_clickable(true))
 	receive_radius.mouse_exited.connect(func(): toggle_clickable(false))
 	receive_radius.send_toggle.connect(toggle_reception)
-	turn_around_indicator.area_entered.connect(func(area): move_direction *= -1)
+	turn_around_indicator.area_entered.connect(func(area): 
+			move_direction *= -1
+			animation.scale.x *= -1)
 	start_idle()
 
 func change_state(new_state: int):
 	prev_state = current_state
 	current_state = new_state
+	if new_state == States.IDLE:
+		animation.play("idle%d" % child_id)
+	elif new_state == States.FOOD_COMA:
+		animation.play("coma%d" % child_id)
+	else:
+		animation.play("run%d" % child_id)
 
 func start_idle():
 	randomize()
@@ -66,7 +77,7 @@ func start_moving(new_state: int):
 	move_direction = -1 if randf() < 0.5 else 1
 	wait_timer = 0.0
 	max_wait = randf() + 1.5
-	sprite.scale.x = move_direction
+	animation.scale.x = -abs(animation.scale.x) * move_direction
 	move_adjustment = 0.85 + (randf() * 0.3)
 	change_state(new_state)
 

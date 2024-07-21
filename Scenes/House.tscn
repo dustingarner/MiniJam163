@@ -101,18 +101,25 @@ position = Vector2(0, -20)
 shape = SubResource("RectangleShape2D_s33pp")
 
 [node name="Grandma" parent="." instance=ExtResource("2_p0sr7")]
-position = Vector2(391, 731)
+position = Vector2(533, 731)
 scale = Vector2(-2.1, 2.1)
 GRAVITY = 200.0
+MOVE_SPEED = 150.0
 
-[node name="Child" parent="." instance=ExtResource("3_3rqlv")]
-position = Vector2(1003, 731)
+[node name="Child1" parent="." instance=ExtResource("3_3rqlv")]
+position = Vector2(724, 731)
+scale = Vector2(1.8, 1.8)
+child_id = 1
 
 [node name="Child2" parent="." instance=ExtResource("3_3rqlv")]
 position = Vector2(803, 454)
+scale = Vector2(1.8, 1.8)
+child_id = 2
 
 [node name="Child3" parent="." instance=ExtResource("3_3rqlv")]
 position = Vector2(811, 1013)
+scale = Vector2(1.8, 1.8)
+child_id = 3
 
 [node name="TeleporterControl2_3" type="Node2D" parent="."]
 position = Vector2(292, 201)
