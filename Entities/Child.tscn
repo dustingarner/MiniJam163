@@ -1,10 +1,13 @@
-[gd_scene load_steps=129 format=3 uid="uid://ps4cxwre5kc8"]
+[gd_scene load_steps=132 format=3 uid="uid://ps4cxwre5kc8"]
 
 [ext_resource type="Script" path="res://Entities/Child.gd" id="1_8vnjj"]
+[ext_resource type="Texture2D" uid="uid://b0lcptwbw2e1r" path="res://Assets/Exported Art Assets/Children SPRITES/Child 01- food coma.png" id="2_ha206"]
 [ext_resource type="Script" path="res://Entities/TeleportIndicator.gd" id="2_qcylf"]
 [ext_resource type="Texture2D" uid="uid://iy4j67jpqkla" path="res://Assets/Exported Art Assets/Children SPRITES/Child 01 - Idle.png" id="3_777g8"]
+[ext_resource type="Texture2D" uid="uid://dp56lw6t8xer8" path="res://Assets/Exported Art Assets/Children SPRITES/Child 02- food coma.png" id="3_okhwr"]
 [ext_resource type="Script" path="res://Entities/ReceiveRadius.gd" id="4_eq1x8"]
 [ext_resource type="Texture2D" uid="uid://bsktgsx371wtd" path="res://Assets/Exported Art Assets/Children SPRITES/Child 02 - Idle.png" id="4_hm0cp"]
+[ext_resource type="Texture2D" uid="uid://dvvhek6da76yd" path="res://Assets/Exported Art Assets/Children SPRITES/Child 03- food coma.png" id="4_m4qdb"]
 [ext_resource type="Texture2D" uid="uid://c0kt4iochyobs" path="res://Assets/Exported Art Assets/Children SPRITES/Child 03 - Idle.png" id="5_s6xvn"]
 [ext_resource type="Texture2D" uid="uid://d0r260tnklkua" path="res://Assets/Exported Art Assets/Children SPRITES/Child 01 - Run.png" id="6_5gexn"]
 [ext_resource type="Texture2D" uid="uid://bivu5dkxm8dy" path="res://Assets/Exported Art Assets/Children SPRITES/Child 02 - Run.png" id="7_n1eyg"]
@@ -470,6 +473,30 @@ region = Rect2(6500, 0, 500, 500)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_ha206")
+}],
+"loop": false,
+"name": &"coma1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_okhwr")
+}],
+"loop": false,
+"name": &"coma2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_m4qdb")
+}],
+"loop": false,
+"name": &"coma3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_imixw")
 }, {
 "duration": 1.0,
@@ -860,7 +887,7 @@ script = ExtResource("1_8vnjj")
 position = Vector2(0, -20.75)
 scale = Vector2(0.101, 0.101)
 sprite_frames = SubResource("SpriteFrames_iokwj")
-animation = &"idle1"
+animation = &"coma1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -19.5)

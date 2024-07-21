@@ -47,6 +47,8 @@ func change_state(new_state: int):
 	current_state = new_state
 	if new_state == States.IDLE:
 		animation.play("idle%d" % child_id)
+	elif new_state == States.FOOD_COMA:
+		animation.play("coma%d" % child_id)
 	else:
 		animation.play("run%d" % child_id)
 
