@@ -13,9 +13,6 @@ func _ready():
 
 func send_to_other(area: TeleportIndicator, start_teleporter: Teleporter, \
 		end_teleporter: Teleporter):
-	if not start_teleporter.can_teleport:
-		return
-	end_teleporter.can_teleport = false
 	area.teleport(end_teleporter.location)
 
 

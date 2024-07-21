@@ -9,4 +9,3 @@ func _ready():
 	collision_mask = Collision.TELEPORT_INDICATOR
 	z_index = -1
 	location = $Marker2D.global_position
-	area_exited.connect(func(area): can_teleport = true)

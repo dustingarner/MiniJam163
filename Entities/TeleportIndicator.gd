@@ -8,6 +8,7 @@ func init(_object: CharacterBody2D):
 
 func _ready():
 	collision_layer = Collision.TELEPORT_INDICATOR
+	collision_mask = Collision.TELEPORTER
 
 func teleport(location: Vector2):
-	object.global_position = location
+	object.teleport(location)
