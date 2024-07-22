@@ -1,15 +1,18 @@
-[gd_scene load_steps=15 format=3 uid="uid://bvinkmovoh8wi"]
+[gd_scene load_steps=18 format=3 uid="uid://bvinkmovoh8wi"]
 
 [ext_resource type="Script" path="res://Scenes/House.gd" id="1_10868"]
-[ext_resource type="Texture2D" uid="uid://bwhegxpio323w" path="res://Assets/Exported Art Assets/House.png" id="1_etrm6"]
+[ext_resource type="Texture2D" uid="uid://cog1cs2rs2uyg" path="res://Assets/Exported Art Assets/House.png" id="1_etrm6"]
 [ext_resource type="Script" path="res://Scenes/Floor.gd" id="1_wccg7"]
-[ext_resource type="Texture2D" uid="uid://cay55d530tywr" path="res://Assets/Exported Art Assets/Blue Sky.jpg" id="2_0y24p"]
+[ext_resource type="Texture2D" uid="uid://cwsfucvm1yxy6" path="res://Assets/Exported Art Assets/Blue Sky.jpg" id="2_0y24p"]
 [ext_resource type="PackedScene" uid="uid://du64xn58fpcg7" path="res://Entities/Grandma.tscn" id="2_p0sr7"]
 [ext_resource type="PackedScene" uid="uid://ps4cxwre5kc8" path="res://Entities/Child.tscn" id="3_3rqlv"]
 [ext_resource type="Script" path="res://Entities/Teleporter/TeleporterControl.gd" id="3_a7qii"]
 [ext_resource type="Script" path="res://Scenes/TurnAround.gd" id="4_wh21w"]
 [ext_resource type="Script" path="res://Entities/Teleporter/Teleporter.gd" id="4_y2amr"]
-[ext_resource type="Texture2D" uid="uid://v6eebddobesk" path="res://Assets/Exported Art Assets/Doors & Collums.png" id="8_oys0j"]
+[ext_resource type="Texture2D" uid="uid://e5jop2p2qivi" path="res://Assets/Exported Art Assets/Doors & Collums.png" id="8_oys0j"]
+[ext_resource type="Texture2D" uid="uid://347h3q17od7w" path="res://Assets/Exported Art Assets/TIMER/Timer - Base Bar.png" id="11_p7bvg"]
+[ext_resource type="Texture2D" uid="uid://bedjdktdytso7" path="res://Assets/Exported Art Assets/TIMER/Timer - Fading Color.png" id="12_l5m0e"]
+[ext_resource type="Texture2D" uid="uid://bicw8nvw0ked5" path="res://Assets/Exported Art Assets/TIMER/Timer - Border Only.png" id="13_f5vb3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tj4fa"]
 size = Vector2(1921, 19)
@@ -100,12 +103,6 @@ script = ExtResource("4_wh21w")
 position = Vector2(0, -20)
 shape = SubResource("RectangleShape2D_s33pp")
 
-[node name="Grandma" parent="." instance=ExtResource("2_p0sr7")]
-position = Vector2(533, 731)
-scale = Vector2(-2.1, 2.1)
-GRAVITY = 200.0
-MOVE_SPEED = 150.0
-
 [node name="Child1" parent="." instance=ExtResource("3_3rqlv")]
 position = Vector2(724, 731)
 scale = Vector2(1.8, 1.8)
@@ -120,6 +117,13 @@ child_id = 2
 position = Vector2(811, 1013)
 scale = Vector2(1.8, 1.8)
 child_id = 3
+
+[node name="Grandma" parent="." instance=ExtResource("2_p0sr7")]
+position = Vector2(533, 731)
+rotation = 3.14159
+scale = Vector2(2.1, -2.1)
+GRAVITY = 200.0
+MOVE_SPEED = 150.0
 
 [node name="TeleporterControl2_3" type="Node2D" parent="."]
 position = Vector2(292, 201)
@@ -179,3 +183,25 @@ position = Vector2(130, 196.667)
 position = Vector2(859, 540)
 scale = Vector2(0.402, 0.402)
 texture = ExtResource("8_oys0j")
+
+[node name="Timer" type="Node2D" parent="."]
+position = Vector2(856, 52)
+scale = Vector2(0.65, 0.65)
+
+[node name="Background" type="Sprite2D" parent="Timer"]
+texture = ExtResource("11_p7bvg")
+
+[node name="Bar" type="Sprite2D" parent="Timer"]
+position = Vector2(-1.53849, -1.53846)
+texture = ExtResource("12_l5m0e")
+
+[node name="Outline" type="Sprite2D" parent="Timer"]
+texture = ExtResource("13_f5vb3")
+
+[node name="ExtraSky" type="Polygon2D" parent="Timer"]
+position = Vector2(13.8462, 3.07692)
+color = Color(1, 0.878431, 0.858824, 1)
+polygon = PackedVector2Array(-244.615, -50.7692, -244.615, 44.6154, -729.231, 46.1538, -720, -61.5385)
+
+[node name="EndPos" type="Marker2D" parent="Timer"]
+position = Vector2(-456.923, -1.53846)
