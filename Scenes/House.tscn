@@ -111,11 +111,11 @@ scale = Vector2(1.8, 1.8)
 child_id = 1
 
 [node name="Ball2" parent="." instance=ExtResource("8_4pnpt")]
-position = Vector2(653, 447)
-scale = Vector2(0.12, 0.12)
+position = Vector2(564, 447)
+scale = Vector2(-0.12, 0.12)
 
 [node name="Child3" parent="." instance=ExtResource("3_3rqlv")]
-position = Vector2(912, 1013)
+position = Vector2(824, 1013)
 scale = Vector2(1.8, 1.8)
 child_id = 3
 
@@ -127,7 +127,7 @@ GRAVITY = 200.0
 MOVE_SPEED = 150.0
 
 [node name="Box" parent="." instance=ExtResource("10_w4da1")]
-position = Vector2(1008, 987)
+position = Vector2(946, 987)
 scale = Vector2(0.21, 0.21)
 
 [node name="Child2" parent="." instance=ExtResource("3_3rqlv")]
@@ -141,10 +141,10 @@ scale = Vector2(0.12, 0.12)
 
 [node name="Toys" parent="." instance=ExtResource("9_eflka")]
 position = Vector2(1011, 430)
-scale = Vector2(0.25, 0.25)
+scale = Vector2(-0.25, 0.25)
 
 [node name="Box2" parent="." instance=ExtResource("10_w4da1")]
-position = Vector2(1234, 985)
+position = Vector2(1185, 985)
 scale = Vector2(-0.21, 0.21)
 
 [node name="TeleporterControl2_3" type="Node2D" parent="."]

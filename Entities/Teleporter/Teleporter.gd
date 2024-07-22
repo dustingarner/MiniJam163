@@ -1,5 +1,5 @@
 extends Area2D
-class_name Teleporter
+#class_name Teleporter
 
 var location: Vector2
 var can_teleport:= true

@@ -1,5 +1,5 @@
 extends Node2D
-class_name TeleporterControl
+#class_name TeleporterControl
 
 
 @onready var tel1:= $Teleporter1
@@ -11,8 +11,8 @@ func _ready():
 	tel1.area_entered.connect(send_to_other.bind(tel1, tel2))
 	tel2.area_entered.connect(send_to_other.bind(tel2, tel1))
 
-func send_to_other(area: TeleportIndicator, start_teleporter: Teleporter, \
-		end_teleporter: Teleporter):
+func send_to_other(area: Area2D, start_teleporter: Area2D, \
+		end_teleporter: Area2D):
 	area.teleport(end_teleporter.location)
 
 

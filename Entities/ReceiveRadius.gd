@@ -1,5 +1,5 @@
 extends Area2D
-class_name ReceiveRadius
+#class_name ReceiveRadius
 
 signal send_toggle(toggle: bool)
 

@@ -1,5 +1,5 @@
 extends Node
-class_name Audio
+
 
 @onready var music:= $Music
 @onready var success:= $Success
@@ -15,6 +15,8 @@ func _ready():
 	music.finished.connect(func(): music.play())
 
 func play_music():
+	if music.playing:
+		return
 	music.play()
 
 func start_song(song: AudioStreamPlayer):

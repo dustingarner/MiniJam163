@@ -15,7 +15,9 @@ var cupcakes:= [
 func _ready():
 	$Play.pressed.connect(GameAudio.play_crunch)
 	$Play.pressed.connect(play_game)
-	$Credits.pressed.connect(func(): )
+	$Credits.pressed.connect(\
+			func(): get_tree().change_scene_to_file("res://Scenes/Credits.tscn"))
+	$Credits.pressed.connect(GameAudio.play_crunch)
 	Input.set_custom_mouse_cursor(cupcakes[0], 0, Vector2(32, 32))
 	GameAudio.play_music()
 
