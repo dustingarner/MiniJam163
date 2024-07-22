@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3lls4f5s77jx"
-path="res://.godot/imported/Timer - Base Bar- rectangle edge.png-a879ad4fb2668f3e95716588d89847b6.ctex"
+uid="uid://c65tejhnaw8jx"
+path="res://.godot/imported/House_1920.png-f6189f0276c07940beb34c2589392c9b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Exported Art Assets/TIMER/Timer - Base Bar- rectangle edge.png"
-dest_files=["res://.godot/imported/Timer - Base Bar- rectangle edge.png-a879ad4fb2668f3e95716588d89847b6.ctex"]
+source_file="res://Assets/Exported Art Assets/House_1920.png"
+dest_files=["res://.godot/imported/House_1920.png-f6189f0276c07940beb34c2589392c9b.ctex"]
 
 [params]
 

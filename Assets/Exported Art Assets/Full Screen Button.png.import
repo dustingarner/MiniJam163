@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3lls4f5s77jx"
-path="res://.godot/imported/Timer - Base Bar- rectangle edge.png-a879ad4fb2668f3e95716588d89847b6.ctex"
+uid="uid://yncpkc7xaayp"
+path="res://.godot/imported/Full Screen Button.png-9093b766c82dcf866ddf613a4152cdf6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Exported Art Assets/TIMER/Timer - Base Bar- rectangle edge.png"
-dest_files=["res://.godot/imported/Timer - Base Bar- rectangle edge.png-a879ad4fb2668f3e95716588d89847b6.ctex"]
+source_file="res://Assets/Exported Art Assets/Full Screen Button.png"
+dest_files=["res://.godot/imported/Full Screen Button.png-9093b766c82dcf866ddf613a4152cdf6.ctex"]
 
 [params]
 
