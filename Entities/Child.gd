@@ -3,6 +3,8 @@ class_name Child
 
 enum States {IDLE = 0, WALKING, RUNNING, FOOD_COMA}
 
+signal start_coma
+
 @export var WALK_SPEED:= 500
 @export var RUN_SPEED:= 800
 
@@ -71,6 +73,7 @@ func receive_cookie():
 	number_cookies += 1
 	if number_cookies > 3:
 		change_state(States.FOOD_COMA)
+		start_coma.emit()
 
 func start_moving(new_state: int):
 	randomize()

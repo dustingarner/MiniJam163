@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bka10uq1c8b8v"]
+
+[ext_resource type="Texture2D" uid="uid://jfye8dkj2trh" path="res://Assets/Exported Art Assets/Title Page/Winner Screen.jpg" id="1_plmon"]
+
+[node name="WinScreen" type="Node2D"]
+position = Vector2(176, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(793, 544.75)
+scale = Vector2(1.00972, 1.00972)
+texture = ExtResource("1_plmon")
