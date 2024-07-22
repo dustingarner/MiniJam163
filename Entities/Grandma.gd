@@ -25,7 +25,7 @@ var current_state: int = 0
 
 func _ready():
 	collision_layer = Collision.GRANDMA
-	collision_mask = Collision.FLOOR
+	collision_mask = Collision.FLOOR + Collision.OBSTACLE
 	give_radius.collision_layer = Collision.GIVE_RADIUS
 	give_radius.collision_mask = Collision.RECEIVE_RADIUS
 	$TeleportIndicator.init(self)
@@ -36,6 +36,7 @@ func _ready():
 func change_state(new_state: int):
 	prev_state = current_state
 	current_state = new_state
+	collision_mask = Collision.FLOOR + Collision.OBSTACLE
 	animation.position.y = ANIM_LOCATIONS[new_state]
 	if new_state == States.IDLE:
 		animation.play("idle")
@@ -43,6 +44,8 @@ func change_state(new_state: int):
 		animation.play("walking")
 	if new_state == States.JUMPING:
 		animation.play("jumping")
+	if new_state == States.FALLING:
+		collision_mask = Collision.FLOOR
 
 func teleport(location: Vector2):
 	var jump_offset: float

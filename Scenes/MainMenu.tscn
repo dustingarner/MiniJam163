@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvlniv0nd6sce"]
+[gd_scene load_steps=9 format=3 uid="uid://bvlniv0nd6sce"]
 
 [ext_resource type="Script" path="res://Scenes/MainMenu.gd" id="1_qi4dx"]
 [ext_resource type="Texture2D" uid="uid://bo25xlsyfroo5" path="res://Assets/Exported Art Assets/Title Page/Title Page.jpg" id="2_ckk26"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://fp1q7t28302r" path="res://Assets/Exported Art Assets/Title Page/Credit Button.png" id="5_txu6v"]
 [ext_resource type="Texture2D" uid="uid://bday5cweqq8sw" path="res://Assets/Exported Art Assets/Title Page/Start-hover.png" id="5_vow7e"]
 [ext_resource type="Texture2D" uid="uid://do1vw2kmtqmii" path="res://Assets/Exported Art Assets/Title Page/Credit Button - hover.png" id="7_1o6r6"]
+[ext_resource type="PackedScene" uid="uid://bn6lbh3lxb7ib" path="res://Globals/Fullscreen.tscn" id="8_u04co"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_qi4dx")
@@ -35,3 +36,5 @@ offset_right = 673.0
 offset_bottom = 613.0
 texture_normal = ExtResource("5_txu6v")
 texture_hover = ExtResource("7_1o6r6")
+
+[node name="Fullscreen" parent="." instance=ExtResource("8_u04co")]

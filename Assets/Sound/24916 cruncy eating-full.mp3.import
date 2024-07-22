@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://syf4tyqk35y3"
+path="res://.godot/imported/24916 cruncy eating-full.mp3-6409c693f62b8366904563a596894769.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/24916 cruncy eating-full.mp3"
+dest_files=["res://.godot/imported/24916 cruncy eating-full.mp3-6409c693f62b8366904563a596894769.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

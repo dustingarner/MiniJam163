@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bvinkmovoh8wi"]
+[gd_scene load_steps=22 format=3 uid="uid://bvinkmovoh8wi"]
 
 [ext_resource type="Script" path="res://Scenes/House.gd" id="1_10868"]
 [ext_resource type="Script" path="res://Scenes/Floor.gd" id="1_wccg7"]
@@ -9,10 +9,14 @@
 [ext_resource type="Texture2D" uid="uid://c65tejhnaw8jx" path="res://Assets/Exported Art Assets/House_1920.png" id="3_br7c7"]
 [ext_resource type="Script" path="res://Scenes/TurnAround.gd" id="4_wh21w"]
 [ext_resource type="Script" path="res://Entities/Teleporter/Teleporter.gd" id="4_y2amr"]
+[ext_resource type="PackedScene" uid="uid://8jcxv0i1jpm1" path="res://Entities/Obstacles/Ball.tscn" id="8_4pnpt"]
+[ext_resource type="PackedScene" uid="uid://hs1dqxfb3ecd" path="res://Entities/Obstacles/Toys.tscn" id="9_eflka"]
 [ext_resource type="Texture2D" uid="uid://dpm6s8qq520d" path="res://Assets/Exported Art Assets/Doors & Collums_1920.png" id="10_3qlhw"]
+[ext_resource type="PackedScene" uid="uid://dmq7vv43rf1su" path="res://Entities/Obstacles/Box.tscn" id="10_w4da1"]
 [ext_resource type="Texture2D" uid="uid://347h3q17od7w" path="res://Assets/Exported Art Assets/TIMER/Timer - Base Bar.png" id="11_p7bvg"]
 [ext_resource type="Texture2D" uid="uid://bedjdktdytso7" path="res://Assets/Exported Art Assets/TIMER/Timer - Fading Color.png" id="12_l5m0e"]
 [ext_resource type="Texture2D" uid="uid://bicw8nvw0ked5" path="res://Assets/Exported Art Assets/TIMER/Timer - Border Only.png" id="13_f5vb3"]
+[ext_resource type="PackedScene" uid="uid://bn6lbh3lxb7ib" path="res://Globals/Fullscreen.tscn" id="17_qip0l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tj4fa"]
 size = Vector2(1921, 19)
@@ -106,10 +110,9 @@ position = Vector2(825, 731)
 scale = Vector2(1.8, 1.8)
 child_id = 1
 
-[node name="Child2" parent="." instance=ExtResource("3_3rqlv")]
-position = Vector2(904, 454)
-scale = Vector2(1.8, 1.8)
-child_id = 2
+[node name="Ball2" parent="." instance=ExtResource("8_4pnpt")]
+position = Vector2(653, 447)
+scale = Vector2(0.12, 0.12)
 
 [node name="Child3" parent="." instance=ExtResource("3_3rqlv")]
 position = Vector2(912, 1013)
@@ -122,6 +125,27 @@ rotation = 3.14159
 scale = Vector2(2.1, -2.1)
 GRAVITY = 200.0
 MOVE_SPEED = 150.0
+
+[node name="Box" parent="." instance=ExtResource("10_w4da1")]
+position = Vector2(1008, 987)
+scale = Vector2(0.21, 0.21)
+
+[node name="Child2" parent="." instance=ExtResource("3_3rqlv")]
+position = Vector2(904, 454)
+scale = Vector2(1.8, 1.8)
+child_id = 2
+
+[node name="Ball" parent="." instance=ExtResource("8_4pnpt")]
+position = Vector2(993, 719)
+scale = Vector2(0.12, 0.12)
+
+[node name="Toys" parent="." instance=ExtResource("9_eflka")]
+position = Vector2(1011, 430)
+scale = Vector2(0.25, 0.25)
+
+[node name="Box2" parent="." instance=ExtResource("10_w4da1")]
+position = Vector2(1234, 985)
+scale = Vector2(-0.21, 0.21)
 
 [node name="TeleporterControl2_3" type="Node2D" parent="."]
 position = Vector2(393, 201)
@@ -202,3 +226,5 @@ polygon = PackedVector2Array(-244.615, -50.7692, -244.615, 44.6154, -729.231, 46
 
 [node name="EndPos" type="Marker2D" parent="Timer"]
 position = Vector2(-456.923, -1.53846)
+
+[node name="Fullscreen" parent="." instance=ExtResource("17_qip0l")]
