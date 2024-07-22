@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhsmqyxc5517"]
+
+[ext_resource type="Script" path="res://Scenes/WinScreen.gd" id="1_h6473"]
+[ext_resource type="Texture2D" uid="uid://cpuns68iibahd" path="res://Assets/Exported Art Assets/Game Over Page/Game Over.png" id="2_6gdij"]
+
+[node name="LoseScreen" type="Node2D"]
+position = Vector2(176, 0)
+script = ExtResource("1_h6473")
+is_win = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(793, 544.75)
+scale = Vector2(1.00972, 1.00972)
+texture = ExtResource("2_6gdij")

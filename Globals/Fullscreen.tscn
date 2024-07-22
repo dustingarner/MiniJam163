@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bn6lbh3lxb7ib"]
+
+[ext_resource type="Script" path="res://Globals/Fullscreen.gd" id="1_w00xk"]
+[ext_resource type="Texture2D" uid="uid://bo3s7aogabnlf" path="res://Assets/Exported Art Assets/Full Screen Button_50x50.png" id="2_yug3p"]
+
+[node name="Fullscreen" type="Node2D"]
+script = ExtResource("1_w00xk")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
+offset_left = 1852.0
+offset_top = -4.0
+offset_right = 1922.0
+offset_bottom = 66.0
+size_flags_horizontal = 4
+texture_normal = ExtResource("2_yug3p")

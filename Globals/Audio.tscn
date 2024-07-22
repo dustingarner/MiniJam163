@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cc767obbfx7a6"]
+[gd_scene load_steps=9 format=3 uid="uid://cc767obbfx7a6"]
 
 [ext_resource type="Script" path="res://Globals/Audio.gd" id="1_8n8eh"]
 [ext_resource type="AudioStream" uid="uid://bh2xtktwru4aj" path="res://Assets/Sound/MainTheme.wav" id="2_3ta75"]
+[ext_resource type="AudioStream" uid="uid://cw58fi7n4gv2" path="res://Assets/Sound/End Song.mp3" id="3_x4y0v"]
+[ext_resource type="AudioStream" uid="uid://bvsu6mi1wrvmj" path="res://Assets/Sound/DeathSong.wav" id="4_mlyg1"]
+[ext_resource type="AudioStream" uid="uid://bprehj3ce13ov" path="res://Assets/Sound/Crunch1.wav" id="5_orvyj"]
+[ext_resource type="AudioStream" uid="uid://bk3m3l4s72sv5" path="res://Assets/Sound/Crunch2.wav" id="6_wq5rw"]
+[ext_resource type="AudioStream" uid="uid://c4y7fagrt3t8i" path="res://Assets/Sound/Crunch3.wav" id="7_btpv2"]
+[ext_resource type="AudioStream" uid="uid://dc6v7s5g42ifm" path="res://Assets/Sound/Crunch4.wav" id="8_seudb"]
 
 [node name="Audio" type="Node"]
 script = ExtResource("1_8n8eh")
@@ -10,3 +16,23 @@ script = ExtResource("1_8n8eh")
 stream = ExtResource("2_3ta75")
 
 [node name="Munch" type="AudioStreamPlayer" parent="."]
+
+[node name="Success" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_x4y0v")
+
+[node name="Failure" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_mlyg1")
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Crunch1" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource("5_orvyj")
+
+[node name="Crunch2" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource("6_wq5rw")
+
+[node name="Crunch3" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource("7_btpv2")
+
+[node name="Crunch4" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource("8_seudb")

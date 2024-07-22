@@ -67,6 +67,9 @@ func toggle_clickable(toggle: bool): can_click = toggle
 func teleport(location: Vector2): global_position = location
 
 func receive_cookie():
+	if current_state == States.RUNNING or current_state == States.FOOD_COMA:
+		return
+	GameAudio.play_crunch()
 	can_click = false
 	can_receive = false
 	start_moving(States.RUNNING)

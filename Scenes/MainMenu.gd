@@ -8,16 +8,16 @@ extends Node2D
 var is_hovered:= false
 var game:= preload("res://Scenes/House.tscn")
 var cupcakes:= [
-	#preload("res://Assets/Exported Art Assets/Cupcake_128_Part-1.png"),
-	#preload("res://Assets/Temporary/Green Rectangle1.png"),
-	#preload("res://Assets/Exported Art Assets/Cupcake_128_Part-2.png")
 	preload("res://Assets/Exported Art Assets/Cupcake_64_Part-1.png"),
 	preload("res://Assets/Exported Art Assets/Cupcake_64_Part-2.png")
 ]
 
 func _ready():
+	$Play.pressed.connect(GameAudio.play_crunch)
 	$Play.pressed.connect(play_game)
+	$Credits.pressed.connect(func(): )
 	Input.set_custom_mouse_cursor(cupcakes[0], 0, Vector2(32, 32))
+	GameAudio.play_music()
 
 func play_game():
 	get_tree().change_scene_to_packed(game)
