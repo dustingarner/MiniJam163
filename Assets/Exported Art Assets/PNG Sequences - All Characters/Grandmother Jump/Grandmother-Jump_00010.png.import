@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< Updated upstream
 uid="uid://d1csaxixbuwh3"
+=======
+uid="uid://ho8untdlxe4y"
+>>>>>>> Stashed changes
 path="res://.godot/imported/Grandmother-Jump_00010.png-c9a28320ce3fe24a4ddb34a067393010.ctex"
 metadata={
 "vram_texture": false

@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< Updated upstream
-uid="uid://cf417jg5rle1w"
-=======
-uid="uid://bksme1ka87eaq"
->>>>>>> Stashed changes
-path="res://.godot/imported/Child 01 -Idle_00023.png-5cb7036082da013981fa3260c9e02163.ctex"
+uid="uid://bxfyjop3ukhpm"
+path="res://.godot/imported/Timer - Base Bar- rectangle edge.png-a879ad4fb2668f3e95716588d89847b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Exported Art Assets/PNG Sequences - All Characters/Child 1 Idle/Child 01 -Idle_00023.png"
-dest_files=["res://.godot/imported/Child 01 -Idle_00023.png-5cb7036082da013981fa3260c9e02163.ctex"]
+source_file="res://Assets/Exported Art Assets/TIMER/Timer - Base Bar- rectangle edge.png"
+dest_files=["res://.godot/imported/Timer - Base Bar- rectangle edge.png-a879ad4fb2668f3e95716588d89847b6.ctex"]
 
 [params]
 

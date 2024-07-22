@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< Updated upstream
 uid="uid://bicw8nvw0ked5"
+=======
+uid="uid://bmq0fgsmr0ion"
+>>>>>>> Stashed changes
 path="res://.godot/imported/Timer - Border Only.png-5f683b5acb4f89c557a161b3712a40ac.ctex"
 metadata={
 "vram_texture": false
