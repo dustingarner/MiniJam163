@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bka10uq1c8b8v"]
+[gd_scene load_steps=3 format=3 uid="uid://4f0ktfsxecsb"]
 
+[ext_resource type="Script" path="res://Scenes/WinScreen.gd" id="1_iow2p"]
 [ext_resource type="Texture2D" uid="uid://jfye8dkj2trh" path="res://Assets/Exported Art Assets/Title Page/Winner Screen.jpg" id="1_plmon"]
 
 [node name="WinScreen" type="Node2D"]
 position = Vector2(176, 0)
+script = ExtResource("1_iow2p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(793, 544.75)

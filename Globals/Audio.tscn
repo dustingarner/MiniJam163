@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cc767obbfx7a6"]
+
+[ext_resource type="Script" path="res://Globals/Audio.gd" id="1_8n8eh"]
+[ext_resource type="AudioStream" uid="uid://bh2xtktwru4aj" path="res://Assets/Sound/MainTheme.wav" id="2_3ta75"]
+
+[node name="Audio" type="Node"]
+script = ExtResource("1_8n8eh")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_3ta75")
+
+[node name="Munch" type="AudioStreamPlayer" parent="."]

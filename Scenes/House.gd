@@ -5,7 +5,7 @@ class_name House
 @onready var bar:= $Timer/Bar
 @onready var bar_end_position:= $Timer/EndPos
 
-const LERP_SPEED:= 0.01
+const LERP_SPEED:= 0.016
 
 var cupcake:= load("res://Assets/Exported Art Assets/Cupcake_64_Part-1.png")
 var win_screen:= preload("res://Scenes/WinScreen.tscn")
